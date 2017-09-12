@@ -64,7 +64,7 @@ use Symfony\Component\Validator\Constraints as Assert;
     *
     * @ORM\column(type="array")
     */
-    private $composition;
+    private $data;
 
     /**
     * Constructor
@@ -205,27 +205,28 @@ use Symfony\Component\Validator\Constraints as Assert;
         return $this->deletedAt;
     }
 
+ 
     /**
-     * Set composition
+     * Set data
      *
-     * @param array $composition
+     * @param array $data
      *
      * @return Ingredient
      */
-    public function setComposition($composition)
+    public function setData($data)
     {
-        $this->composition = $composition;
+        $this->data = $data;
 
         return $this;
     }
 
     /**
-     * Get composition
+     * Get data
      *
      * @return array
      */
-    public function getComposition()
+    public function getData()
     {
-        return $this->composition;
+        return $this->data;
     }
 }
