@@ -43,6 +43,10 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
             'Sensio\\Bundle\\DistributionBundle\\' => 33,
         ),
+        'R' => 
+        array (
+            'RestBundle\\' => 11,
+        ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
@@ -59,9 +63,15 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
         array (
             'Monolog\\' => 8,
         ),
+        'J' => 
+        array (
+            'JMS\\SerializerBundle\\' => 21,
+        ),
         'I' => 
         array (
+            'IngredientBundle\\' => 17,
             'Incenteev\\ParameterHandler\\' => 27,
+            'ImportBundle\\' => 13,
         ),
         'F' => 
         array (
@@ -159,6 +169,10 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
         array (
             0 => __DIR__ . '/..' . '/sensio/distribution-bundle',
         ),
+        'RestBundle\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/RestBundle',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -187,9 +201,21 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'JMS\\SerializerBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jms/serializer-bundle',
+        ),
+        'IngredientBundle\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/IngredientBundle',
+        ),
         'Incenteev\\ParameterHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
+        ),
+        'ImportBundle\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/ImportBundle',
         ),
         'Fig\\Link\\' => 
         array (
@@ -244,11 +270,37 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
                 0 => __DIR__ . '/..' . '/sensiolabs/security-checker',
             ),
         ),
+        'P' => 
+        array (
+            'PhpOption\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoption/phpoption/src',
+            ),
+            'PhpCollection' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpcollection/phpcollection/src',
+            ),
+        ),
+        'M' => 
+        array (
+            'Metadata\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/jms/metadata/src',
+            ),
+        ),
         'J' => 
         array (
             'JsonpCallbackValidator' => 
             array (
                 0 => __DIR__ . '/..' . '/willdurand/jsonp-callback-validator/src',
+            ),
+            'JMS\\Serializer' => 
+            array (
+                0 => __DIR__ . '/..' . '/jms/serializer/src',
+            ),
+            'JMS\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/jms/parser-lib/src',
             ),
         ),
         'D' => 
