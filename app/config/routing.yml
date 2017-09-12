@@ -1,5 +1,5 @@
 rest:
-    resource: "@RestBundle/Resources/config/routing.xml"
+    resource: "@RestBundle/Controller/"
     prefix:   /
 
 ingredient:
