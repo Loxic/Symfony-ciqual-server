@@ -42,6 +42,7 @@
 
 # Composer
 /vendor/
+/vendor/composer/
 
 # Cache and logs (Symfony2)
 /app/cache/*
@@ -58,3 +59,7 @@
 # Parameters
 /app/config/parameters.yml
 /app/config/parameters.ini
+vendor/composer/autoload_namespaces.php
+vendor/composer/autoload_psr4.php
+vendor/composer/autoload_static.php
+vendor/composer/installed.json
