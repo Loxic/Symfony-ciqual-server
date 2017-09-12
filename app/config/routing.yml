@@ -1,3 +1,15 @@
+rest:
+    resource: "@RestBundle/Resources/config/routing.xml"
+    prefix:   /
+
+ingredient:
+    resource: "@IngredientBundle/Resources/config/routing.xml"
+    prefix:   /
+
+import:
+    resource: "@ImportBundle/Resources/config/routing.xml"
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
