@@ -1,5 +1,6 @@
 rest:
-    resource: "@RestBundle/Controller/"
+    type: rest
+    resource: RestBundle\Controller\IngredientController
     prefix:   /
 
 ingredient:
