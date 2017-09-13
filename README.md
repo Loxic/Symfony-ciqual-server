@@ -1,12 +1,10 @@
 # Symfony-ciqual-server
 
 ## Introduction
-====
 This project is a solution of the following problem: https://github.com/FoodMeUp/Symfony-Exam.
 
 
 ## Installation
-====
 - Clone this repository
 - Run "composer install"
 - Generate Database (php bin/console doctrine:schema:update --force)
@@ -17,7 +15,6 @@ This project is a solution of the following problem: https://github.com/FoodMeUp
 - Hope that I haven't forgotten any step :)
 
 ## Further improvements
-====
 - Install Grunt/Bower for front.
 - Improve design & features (use react-vis ?)
 - Use Sass for the stylesheets
