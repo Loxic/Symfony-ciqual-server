@@ -1,15 +1,15 @@
 rest:
     type: rest
     resource: RestBundle\Controller\IngredientController
-    prefix:   /
+    prefix:   /api/
 
 ingredient:
-    resource: "@IngredientBundle/Resources/config/routing.xml"
-    prefix:   /
+    resource: "@IngredientBundle/Controller"
+    type:   annotation
 
 import:
-    resource: "@ImportBundle/Resources/config/routing.xml"
-    prefix:   /
+    resource: "@ImportBundle/Controller"
+    type:   annotation
 
 app:
     resource: '@AppBundle/Controller/'

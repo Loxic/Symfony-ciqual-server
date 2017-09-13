@@ -51,9 +51,12 @@ class IngredientController extends Controller
             return new JsonResponse(['message' => 'Query needed', Response::HTTP_NOT_FOUND]);
         }
 
-        $ingredients = $this->get('doctrine.orm.entity_manager')
+        /*$ingredients = $this->get('doctrine.orm.entity_manager')
             ->getRepository('IngredientBundle:Ingredient')
-            ->searchByString($search);
+            ->searchByString($search);*/
+        $finder = $this->container->get('fos_elastica.finder.app.ingredient');
+        // Permet de trouver 
+        $ingredients = $finder->find($search."*");
 
         if(empty($ingredients))
             return new JsonResponse(['message' => 'No result', Response::HTTP_NOT_FOUND]);

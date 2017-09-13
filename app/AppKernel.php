@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new ImportBundle\ImportBundle(),
             new IngredientBundle\IngredientBundle(),
             new RestBundle\RestBundle(),
+            new FOS\ElasticaBundle\FOSElasticaBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -79,8 +79,23 @@ fos_rest:
         view_response_listener: true
     format_listener:
         rules:
-            - { path: '^/', priorities: ['json'], fallback_format: 'json' }
-        
+            - { path: 'api/', priorities: ['json'], fallback_format: 'json' }
+            - { path: '^/', priorities: ['text/html']}
+fos_elastica:
+    clients:
+        default: { host: localhost, port: 9200}
+    indexes:
+        app:
+            types:
+                ingredient:
+                    mappings:
+                        origgpfr: ~
+                        origfdnm: ~
+                    persistence:
+                        driver: orm
+                        model: IngredientBundle\Entity\Ingredient
+                        provider: ~
+                        finder: ~
 services:
     converter.csvtoarray:
         class: ImportBundle\Services\CsvToArray
