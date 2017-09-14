@@ -22,6 +22,7 @@ class IngredientController extends Controller
     * @Rest\View()
     * @Rest\Get("/ingredients")
     */
+    /*
     public function getIngredientsAction(Request $request) {
         $ingredients = $this->get('doctrine.orm.entity_manager')
         ->getRepository('IngredientBundle:Ingredient')
@@ -36,7 +37,7 @@ class IngredientController extends Controller
         $view = View::create($formatted);
         //Seems ok, but lot of space character in json response for numerical data
         return $view;
-    }
+    }*/
 
 
    /**
@@ -56,7 +57,7 @@ class IngredientController extends Controller
             ->searchByString($search);*/
         $finder = $this->container->get('fos_elastica.finder.app.ingredient');
         // Permet de trouver 
-        $ingredients = $finder->find($search."*");
+        $ingredients = $finder->find($search."*"); //to improve (sort, pagination, etc)
 
         if(empty($ingredients))
             return new JsonResponse(['message' => 'No result', Response::HTTP_NOT_FOUND]);
@@ -68,7 +69,7 @@ class IngredientController extends Controller
         }
 
         $view = View::create($formatted);
-        //Seems ok, but lot of space character in json response for numerical data
+
         return $view;
     }
 
