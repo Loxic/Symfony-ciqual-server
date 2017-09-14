@@ -100,10 +100,10 @@ class SearchForm extends React.Component {
 
 
 
-ReactDOM.render(
+/*ReactDOM.render(
     <SearchForm />,
     document.getElementById('wrapper')
-);
+);*/
 /*ReactDOM.render(
     <Results />,
     document.getElementByIdById('wrapper')

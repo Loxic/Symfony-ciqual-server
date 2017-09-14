@@ -18,6 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Render Home
  */
+console.log('shhh');
 var renderHome = function renderHome() {
     var render = document.getElementById("react-render-app");
     if (render) {

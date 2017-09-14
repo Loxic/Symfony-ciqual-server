@@ -64,8 +64,35 @@ class IngredientController extends Controller
         //formate data
         $formatted = array();
         foreach($ingredients as $ingredient) {
-            $formatted[] = $ingredient->getData();
+            $formatted[] = $ingredient;
         }
+
+        $view = View::create($formatted);
+        //Seems ok, but lot of space character in json response for numerical data
+        return $view;
+    }
+
+    /**
+    * @Rest\View()
+    * @Rest\Get("/ingredient/{id}")
+    */
+    public function getIngredientAction(Request $request) {
+        //check if query param is here
+        $id = $request->get('id');
+        if($id === null) {
+            return new JsonResponse(['message' => 'Query needed', Response::HTTP_NOT_FOUND]);
+        }
+
+        $ingredient = $this->get('doctrine.orm.entity_manager')
+            ->getRepository('IngredientBundle:Ingredient')
+            ->findById($id)[0];
+ 
+        if(!$ingredient)
+            return new JsonResponse(['message' => 'No result', Response::HTTP_NOT_FOUND]);
+        
+        //print_r($ingredient);
+        //formate data
+        $formatted = $ingredient->getData();
 
         $view = View::create($formatted);
         //Seems ok, but lot of space character in json response for numerical data

@@ -5,6 +5,7 @@ namespace IngredientBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use JMS\Serializer\Annotation\Exclude;
 
 
 /**
@@ -61,7 +62,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
     /**
     * @var array
-    *
+    * @Exclude(if="true")
     * @ORM\column(type="array")
     */
     private $data;
