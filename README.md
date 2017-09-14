@@ -17,4 +17,5 @@ This project is a solution of the following problem: https://github.com/FoodMeUp
 ## Further improvements
 - Install Grunt/Bower for front.
 - Improve design & features (use react-vis ?)
+- do not send all data for just a research
 - Use Sass for the stylesheets
