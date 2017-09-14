@@ -1,3 +1,25 @@
+const {
+    RadialChart,
+} = reactVis;
+
+//Not all, because it will be unreadable
+const dataForChart = [
+    "Eau (g/100g)",
+    "Protéines (g/100g)",
+    "Glucides (g/100g)",
+    "Lipides (g/100g)",
+    "Sucres (g/100g)",
+    "Amidon (g/100g)",
+    "Fibres alimentaires (g/100g)",
+    "Polyols totaux (g/100g)",
+    "Cendres (g/100g)",
+    "Alcool (g/100g)",
+    "Acides organiques (g/100g)",
+    "AG saturés (g/100g)",
+    "AG monoinsaturés (g/100g)",
+    "AG polyinsaturés (g/100g)",
+];
+
 class ExpandableIngredient extends React.Component {
     constructor(props) {
         super(props);
@@ -12,6 +34,7 @@ class ExpandableIngredient extends React.Component {
         else {
             this.setState({expanded: false});
         }
+        
         if(Object.keys(this.state.innerData).length == 0) {
             var id = this.state.data.id;
             var request = new Request('http://localhost:8080/api/ingredient/'+id);
@@ -28,6 +51,7 @@ class ExpandableIngredient extends React.Component {
         var innerData = this.state.innerData;
         var expanded = this.state.expanded;
         var description = [];
+        var radialSchemaData = [];
         if(expanded == true) {
             var i = 0;
             for (var prop in innerData) {
@@ -38,6 +62,9 @@ class ExpandableIngredient extends React.Component {
                     continue;
                 }
                 else {
+                    if(dataForChart.indexOf(prop) > -1) {
+                        radialSchemaData.push({angle: parseFloat(innerData[prop]), label: innerData[prop], sublabel: prop});
+                    }
                     description.push(
                         (<div className="ingredient-description" key={i}>
                             <span>{prop}:</span> <span>{innerData[prop]}</span>
@@ -49,6 +76,13 @@ class ExpandableIngredient extends React.Component {
         return (
             <li className="list-group-item">
                 <a onClick={this.toggleExpand} className={"list-group-item list-group-item-action" + (expanded ? " active" : "")}><span>{data.origgpfr}</span> <span>{data.origfdnm}</span></a>
+                { expanded ? 
+                    (<RadialChart
+                        data={radialSchemaData}
+                        width={300}
+                        height={300}
+                    />)
+                 : null}
                 {
                     expanded ? description : null
                 }
