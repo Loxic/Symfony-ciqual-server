@@ -1,0 +1,19 @@
+{
+  "name": "symfony-ciqual-server",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "loxic <a.blazart@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
